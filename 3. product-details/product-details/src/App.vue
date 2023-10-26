@@ -3,7 +3,7 @@
     <div class="list-items__title">
       Список товаров
     </div>
-    <ProductDetails v-for="item in products" :key="item.id" :product="item">{{ item.name }}</ProductDetails>
+    <ProductDetails v-for="item in products" :key="item.id" :product="item" max_width="600px">{{ item.name }}</ProductDetails>
   </div>
 </template>
 
@@ -38,7 +38,6 @@ export default {
 
 .list-items {
   width: fit-content;
-  max-width: 600px;
 
   background: radial-gradient(at center, #badfa2, #c0a7ba);
   border: solid black;

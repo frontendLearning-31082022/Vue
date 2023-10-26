@@ -6,7 +6,7 @@
     </div>
     <div class="item__full-info" v-if="!this.hided">
       <div class="item__info">
-        <div class="item__name"> {{ `Товар ${product.name} ${product.availiable ? ' (available)':''}` }}</div>
+        <div class="item__name"> {{ `Товар ${product.name} ${product.availiable ? ' (available)' : ''}` }}</div>
         <div class="item__price" v-if="product.price"> {{ `Цена ${product.price} $ ` }}</div>
       </div>
 
@@ -37,6 +37,11 @@ export default {
         if (!(types && struct)) alert('Неправильные исходные данные ' + val.name)
         return types && struct
       }
+    },
+    max_width: {
+      type: String,
+      required: false,
+      default: '100vw'
     }
   },
   data () {
@@ -63,15 +68,6 @@ export default {
 
 }
 
-// .item::after {
-//         content: "cccccc";
-//         width: 63px;
-//         background: #EF5B70;
-//         display: inline-block;
-//         aspect-ratio: 6300 / 303;
-//         margin-top: 12.1px;
-//     }
-
 div:not(.hided).item.not-availiable {
   background: gray;
   position: relative;
@@ -87,7 +83,7 @@ div:not(.hided).item.not-availiable {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -100,6 +96,8 @@ div:not(.hided).item {
     &__brief-info {
       background: black;
       width: 40vw;
+      max-width: v-bind(max_width);
+      min-width: 100%;
     }
 
     &__full-info {
