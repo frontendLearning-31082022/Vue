@@ -1,0 +1,1 @@
+[{"name":"apple","price":200,"count":2 ,"availiable":true},{"name":"apple"},{"name":"pineapple","price":300,"availiable":false},{"name":"orange","price":100,"availiable":true},{"name":"ice cream","price":160,"availiable":true},{"name":"cake","price":1100,"availiable":true,"count":10}]
